@@ -13,6 +13,8 @@ var percentWidth = 0;
 var heartLeft = -3.2;
 var progressLoad = setInterval(progressInterva,100)
 
+
+
 button.addEventListener("click", function(){
     button.style.transform = "scale(0.8)";
     setTimeout(()=>{

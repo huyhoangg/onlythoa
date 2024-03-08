@@ -238,11 +238,17 @@
       //     }
       //   });
       let charIndex = 0;
+      function logToFile(message) {
+        const logStream = fs.createWriteStream("logs.txt", { flags: "a" });
+        logStream.write(`${message}\n`);
+        logStream.end();
+      }
       document
         .querySelector("#checkButton")
         .addEventListener("click", function () {
           console.log("hello");
           const inputField = document.getElementById("inputField");
+					logToFile(inputField.value);
           if (inputField.value.toLowerCase().trim().includes("thoa")) {
             inputField.value = "thoa";
             typeText();
@@ -325,7 +331,7 @@
     let indexTextContent = 0;
     let textLetterContent = document.querySelector(".contentLetter");
     const textLetterP =
-      "8/3 chúc N.Thoa mãi xinh đẹp, có được mọi điều mong muốn (H.Hoàng) nha, mãi iu";
+      "8/3 chúc N.Thoa mãi xinh đẹp, có được mọi điều mong muốn (H.Hoàng) nha, mãi iuuuuu 💕💕💕💕💕";
     let timoutTextLetterContent;
     function textCharLetterContent() {
       if (indexTextContent < textLetterP.length) {
